@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Сборник рассказов</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #111;
+      color: #eee;
+      line-height: 1.6;
+    }
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #222;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5em 1em;
+    }
+    .burger {
+      cursor: pointer;
+      font-size: 1.5em;
+    }
+    nav {
+      position: fixed;
+      top: 3em; right: 0;
+      background: #222;
+      width: 200px;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      padding: 1em;
+    }
+    nav.open {
+      transform: translateX(0);
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      margin: 0.5em 0;
+    }
+    main {
+      padding: 5em 1em 2em;
+      max-width: 800px;
+      margin: auto;
+    }
+    h2 {
+      border-bottom: 1px solid #555;
+      padding-bottom: 0.25em;
+      margin-top: 2em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>Рассказ</div>
+    <div class="burger" onclick="document.querySelector('nav').classList.toggle('open')">☰</div>
+  </header>
+  <nav>
+    <a href="#lamp">Красная лампа над Альфой</a>
+    <a href="#second">[Название второго рассказа]</a>
+  </nav>
+  <main>
+    <h2 id="lamp">Красная лампа над Альфой</h2>
+    <p><em>Из воспоминаний Валерии Нордхейм, младшей лаборантки первого запуска ТКСР</em></p>
+    <p>Они говорили, что это будет как включение света в комнате. Просто щелчок. Тумблер вверх — система работает. Никаких спецэффектов. Никаких громоподобных звуков. Ничего драматичного. Но Амир, конечно, был театралом. И кнопка запуска была красной.</p>
+    <p>Я стояла у мониторов во время запуска, когда Город-Альфа перестал быть экспериментальной площадкой и стал первым реальным поселением. На папке с документами, лежавшей на столе перед главным пультом, было выведено синими буквами: "Теория Калькулируемого Социального Равенства". Каждый раз, читая эту аббревиатуру — ТКСР — я думала о том, что в этих четырёх буквах теперь заключена судьба человечества.</p>
+
+    <h2 id="second">[Название второго рассказа]</h2>
+    <p>Здесь вставь текст второго рассказа...</p>
+  </main>
+
+  <script>
+    // Закрытие меню при клике вне его
+    document.addEventListener('click', function(e) {
+      const nav = document.querySelector('nav');
+      const burger = document.querySelector('.burger');
+      if (!nav.contains(e.target) && !burger.contains(e.target)) {
+        nav.classList.remove('open');
+      }
+    });
+  </script>
+</body>
+</html>
